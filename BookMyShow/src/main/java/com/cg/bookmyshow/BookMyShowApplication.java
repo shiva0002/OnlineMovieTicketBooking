@@ -12,31 +12,31 @@ public class BookMyShowApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BookMyShowApplication.class, args);
-		City city = new City();
-        city.setCityId("C001");
-        city.setCityName("New York");
-        city.setCityAddress("123 Main Street");
+		// City city = new City();
+        // city.setCityId("C001");
+        // city.setCityName("New York");
+        // city.setCityAddress("123 Main Street");
 
-        // Create a list to store theaters
-        List<Theater> theaters = new ArrayList<>();
+        // // Create a list to store theaters
+        // List<Theater> theaters = new ArrayList<>();
 
-        // Create and add theaters to the list
-        Theater theatre1 = new Theater();
-        theatre1.setTheaterId("T001");
-        theatre1.setTheaterName("ABC Theatre");
-        theatre1.setTheaterAddress("456 Broadway");
-        theatre1.setCity(city);
-        theaters.add(theatre1);
+        // // Create and add theaters to the list
+        // Theater theatre1 = new Theater();
+        // theatre1.setTheaterId("T001");
+        // theatre1.setTheaterName("ABC Theatre");
+        // theatre1.setTheaterAddress("456 Broadway");
+        // theatre1.setCity(city);
+        // theaters.add(theatre1);
 
-        Theater theatre2 = new Theater();
-        theatre2.setTheaterId("T002");
-        theatre2.setTheaterName("XYZ Theatre");
-        theatre2.setTheaterAddress("789 Elm Street");
-        theatre2.setCity(city);
-        theaters.add(theatre2);
+        // Theater theatre2 = new Theater();
+        // theatre2.setTheaterId("T002");
+        // theatre2.setTheaterName("XYZ Theatre");
+        // theatre2.setTheaterAddress("789 Elm Street");
+        // theatre2.setCity(city);
+        // theaters.add(theatre2);
 	
-        TheatreService ts = new TheatreService();
-        ts.getTheatersInCity("New York",theaters);
+        // TheatreService ts = new TheatreService();
+        // ts.getTheatersInCity("New York",theaters);
 	}
 	
 	
