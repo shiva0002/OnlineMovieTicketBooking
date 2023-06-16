@@ -2,6 +2,7 @@ package com.cg.bookmyshow;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 import com.cg.bookmyshow.model.City;
 import com.cg.bookmyshow.model.Theater;
 import com.cg.bookmyshow.service.TheatreService;
