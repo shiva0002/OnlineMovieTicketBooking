@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.cg.bookmyshow.Helper.Input;
 import com.cg.bookmyshow.service.DataHandlingService;
 
 @RestController
@@ -28,6 +27,8 @@ public class MainController {
     public String success(){
         return "Success";
     }
+
+    //Get All theatres in a particular city
     @PostMapping("/theatres/{city}")
     public List<String> getAllTheatresinCity(@RequestParam("file") MultipartFile file,@PathVariable("city") String city) {
         
@@ -35,6 +36,7 @@ public class MainController {
         return this.dataService.getTheatersInCity(city);
     }
 
+    //Get All theatres playing a particular movie
     @PostMapping("/theatres/movie/{movie}")
     public List<String> getAllTheatresPlayingMovie(@RequestParam("file") MultipartFile file,@PathVariable("movie") String movie) {
         
@@ -42,6 +44,7 @@ public class MainController {
         return this.dataService.getTheatersPlayingMovie(movie.toLowerCase());
     }
 
+    //Get All movies playing at a particular theatre
     @PostMapping("/movies/theatre/{theatre}")
     public List<String> getAllMoviesPlayingAtTheatre(@RequestParam("file") MultipartFile file,@PathVariable("theatre") String theatre) {
         
@@ -49,6 +52,7 @@ public class MainController {
         return this.dataService.getMoviesPlayingAtTheatre(theatre.toLowerCase());
     }
 
+    //Get Movies Playing at all theatres in a particular city
     @PostMapping("/movies/alltheatre/city/{city}")
     public Map<String,List<String>> getMoviesPlayingAtAllTheatreinCity(@RequestParam("file") MultipartFile file,@PathVariable("city") String city) {
         
@@ -56,6 +60,7 @@ public class MainController {
         return this.dataService.getMoviesPlayinginCity(city.toLowerCase());
     }
 
+    //Get show timings for a movie playing at a particular theatre
     @PostMapping("/showTimes")
     public List<String> getShowTimings(@RequestParam("file") MultipartFile file,@RequestHeader("theatreName") String theatre,@RequestHeader("movieName") String movie) {
         this.dataService.save(file);

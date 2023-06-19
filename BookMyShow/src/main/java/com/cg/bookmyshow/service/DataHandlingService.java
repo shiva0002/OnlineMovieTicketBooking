@@ -18,7 +18,7 @@ public class DataHandlingService {
     public void save(MultipartFile file) {
 
         try {
-            datas = Helper.convertExcelToListOfProduct(file.getInputStream());
+            datas = Helper.convertExcelToListOfData(file.getInputStream());
             
         } catch (IOException e) {
             e.printStackTrace();

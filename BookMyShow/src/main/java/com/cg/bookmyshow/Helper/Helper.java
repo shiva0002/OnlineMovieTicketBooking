@@ -14,21 +14,21 @@ import com.cg.bookmyshow.model.Data;
 
 public class Helper {
 
-    public static boolean checkExcelFormat(MultipartFile file){
-        String contentType = file.getContentType();
-        String excelContentType = "application/vnd.ms-excel";
-        //application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
-        if(contentType!=null && contentType.equals(excelContentType)){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
+    // public static boolean checkExcelFormat(MultipartFile file){
+    //     String contentType = file.getContentType();
+    //     String excelContentType = "application/vnd.ms-excel";
+    //     //application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+    //     if(contentType!=null && contentType.equals(excelContentType)){
+    //         return true;
+    //     }
+    //     else{
+    //         return false;
+    //     }
+    // }
 
     //Store Excel Data to corresponding List
 
-    public static List<Data> convertExcelToListOfProduct(InputStream is) {
+    public static List<Data> convertExcelToListOfData(InputStream is) {
         List<Data> list = new ArrayList<>(); 
         try {
             XSSFWorkbook workbook = new XSSFWorkbook(is);
