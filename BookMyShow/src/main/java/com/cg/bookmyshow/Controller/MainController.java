@@ -67,4 +67,11 @@ public class MainController {
         return this.dataService.getShowTimings(theatre.toLowerCase(),movie.toLowerCase());
     }
 
+    //Get All Movies above a certain rating
+    @PostMapping("/movies/rating/{rating}")
+    public List<String> getMovies(@RequestParam("file") MultipartFile file,@PathVariable("rating") Double rating){
+        this.dataService.save(file);
+        return this.dataService.getMoviesAboveCertainRating(rating);
+    }
+
 }

@@ -1,6 +1,5 @@
 package com.cg.bookmyshow.service;
 
-import org.apache.commons.collections4.functors.AndPredicate;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -13,7 +12,7 @@ import java.util.stream.Collectors;
 
 @Service
 public class DataHandlingService {
-    List<Data> datas = new ArrayList<Data>();
+    public List<Data> datas = new ArrayList<Data>();
 
     public void save(MultipartFile file) {
 
@@ -88,5 +87,18 @@ public class DataHandlingService {
         }
         return showTimes;
     }
+
+    //Get List of Movies above a certain rating
+    public List<String> getMoviesAboveCertainRating(Double rating){
+        List<String> movies = new ArrayList<String>();
+        List<Data> temp = datas.stream().filter(e->e.getMovieRating()>rating).collect(Collectors.toList());
+
+        for(int i=0;i<temp.size();i++){
+            if(!movies.contains(temp.get(i).getMovieName()))
+                movies.add(temp.get(i).getMovieName());
+        }
+        return movies;
+    }
+
 
 }
